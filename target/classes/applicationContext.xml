@@ -9,9 +9,17 @@
   
   <bean id="fortuneService" class="org.spring.core.services.FortuneServiceImpl" />
   
+  <!-- constructor injection -->
   <bean id="myCoach" class="org.spring.core.beans.FootballCoach">
-	  	<!-- constructor injection -->
 	  	<constructor-arg ref="fortuneService" />
+  </bean>
+  
+  
+  <!-- setter injection -->
+  <bean id="tennisCoach" class="org.spring.core.beans.TennisCoach">
+  
+  	<!-- will call setFortuneService in TennisCoach class   -->
+  	<property name="fortuneService" ref="fortuneService" />
   </bean>
  
 </beans>
