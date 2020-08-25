@@ -7,6 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
   
+  <!--  load properties file -->
+  <context:property-placeholder location="classpath:sports.properties"/>
+  
   <bean id="fortuneService" class="org.spring.core.services.FortuneServiceImpl" />
   
   <!-- constructor injection -->
@@ -22,7 +25,7 @@
   	<property name="fortuneService" ref="fortuneService" />
   	
   	<!-- will call setEmail for setter injection -->
-  	<property name="email" value="ifawzy@mail.com" />
+  	<property name="email" value="${coach.email}" />  <!-- get coach email from sports.properties file -->
   	
   	<!-- will call setNumber for setter injection -->
   	<property name="number" value="10" />
