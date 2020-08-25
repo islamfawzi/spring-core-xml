@@ -17,6 +17,9 @@ public class App {
 		Coach coach = applicationContext.getBean("myCoach", Coach.class);
 		
 		logger.info(coach.getDailyWork());
+		
+		// inject fortuneServcie to getFortune (constructor injection)
+		logger.info(coach.getFortune());
 	}
 
 }
