@@ -18,8 +18,14 @@
   <!-- setter injection -->
   <bean id="tennisCoach" class="org.spring.core.beans.TennisCoach">
   
-  	<!-- will call setFortuneService in TennisCoach class   -->
+  	<!-- will call setFortuneService in TennisCoach class for setter injection   -->
   	<property name="fortuneService" ref="fortuneService" />
+  	
+  	<!-- will call setEmail for setter injection -->
+  	<property name="email" value="ifawzy@mail.com" />
+  	
+  	<!-- will call setNumber for setter injection -->
+  	<property name="number" value="10" />
   </bean>
  
 </beans>
